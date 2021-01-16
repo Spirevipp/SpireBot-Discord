@@ -1,5 +1,7 @@
 # SpireBot-Discord
- Discord bot NodeJS
+ Discord bot NodeJS  <br>
+ <br>
+ Run with `node bot.js`
 
 ## Configuration
 Create a `.env` file from the `.env-sample` and fill in the variables  <br>
