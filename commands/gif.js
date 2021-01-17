@@ -11,6 +11,7 @@ module.exports = {
             let url = `https://api.tenor.com/v1/search?q=${keywords}&key=${process.env.TENORAPIKEY}&contentfilter=off&limit=4`;
             let response = await fetch(url);
             let json = await response.json();
+            console.log(`Searched for GIF with: ${keywords} and sent all 4 results! So much spam :(`);
             msg.channel.send("🤖 THE BEEPEST BOOP 🤖");
             json.results.forEach(element => {
                 msg.channel.send(element.url);
@@ -24,7 +25,7 @@ module.exports = {
         let response = await fetch(url);
         let json = await response.json();
         const index = Math.floor(Math.random() * json.results.length);
-        console.log("Searched for GIF with: " + keywords);
+        console.log(`Searched for GIF with: ${keywords}`);
         msg.channel.send("🤖 BEEP BOOP 🤖");
         msg.channel.send(json.results[index].url);
 
