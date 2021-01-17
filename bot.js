@@ -1,6 +1,6 @@
 // Node modules
 require("dotenv").config();
-const fs = require("fs");
+const fs = require("file-system");
 const Discord = require("discord.js");
 console.log("Beep boop! 🤖");
 
