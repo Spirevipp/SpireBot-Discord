@@ -1,4 +1,7 @@
+const name = "ttsMessageOOF";
 module.exports = {
+    name: name,
+
     featureFunc: (msg) => {
         // selve funksjonen til featuren
         msg.reply("OOF my ears hurts :(");
@@ -9,5 +12,7 @@ module.exports = {
         if (msg.tts && !msg.author.bot) return true;
         else return false;
     },
-    description: "ttsMessageOOF"
+    description: `I OOFS when someone uses TTS`,
+    
+    usage: `Be a dick and use /tts`
 }

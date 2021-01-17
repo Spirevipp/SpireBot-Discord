@@ -1,10 +1,10 @@
-let t;
+let type;
 
 function isCommand(cmd, commands) {
     for (let key of Object.keys(commands)) {
         //console.log(key, cmd);
         if (key == cmd) {
-            t = "command";
+            type = "command";
             return true;
         }
     }
@@ -15,7 +15,7 @@ function isFeature(ft, features) {
     for (let key of Object.keys(features)) {
         //console.log(key, ft);
         if (key == ft) {
-            t = "feature";
+            type = "feature";
             return true;
         }
     }
@@ -29,10 +29,10 @@ module.exports = function (msg, args, commands, features) {
         commands["help"]["command"](msg, args, commands, features);
         return;
     }
-    // If help command + 1 keyword
-    if (args.length === 1) {
+    // If help command + 1 keyword or more
+    if (args.length >= 1) {
         //console.log(args);
-        if (isCommand(args[0], commands) || isFeature(args[0], features)) commands["help"]["embedDescription"](msg, args, commands, features, t);
+        if (isCommand(args[0], commands) || isFeature(args[0], features)) commands["help"]["embedDescription"](msg, args, commands, features, type);
         else {
             console.log(args[0] + " is not a valid command or feature");
             msg.reply(args[0] + " is not a valid command or feature");

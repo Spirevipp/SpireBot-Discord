@@ -4,10 +4,8 @@ const fs = require("fs");
 const Discord = require("discord.js");
 console.log("Beep boop! 🤖");
 
-// subfiles
+// Message handler which decides what to do with the incoming message
 const messageHandler = require("./messageHandler");
-// const featureHandler = require("./featureHandler");
-// const commandHandler = require("./commandHandler");
 
 // Init Discord client class
 const client = new Discord.Client();
