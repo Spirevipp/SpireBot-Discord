@@ -1,9 +1,12 @@
+# The discord bot token from developer portal
 BOTTOKEN=
-# symbol to use for commands
-COMMANDSYMBOL=
+# symbol to use for commands, can theoretically be any character or symbol
+COMMANDSYMBOL=!
+# api key from Tenor for gif search
 TENORAPIKEY=
-# yes or no
+# Whether the bot should respond to private messages (yes or no)
 RESPONDTOPM=yes
+# bot channel to accept commands in (only necessary if ENABLEDCHANNELS != all)
 BOTCHANNEL=
-# currently only all is implemented, set to anything else to disable
+# currently only all is implemented, set to anything else to disable commands and features in all channels except BOTCHANNEL
 ENABLEDCHANNELS=all

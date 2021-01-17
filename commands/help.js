@@ -17,7 +17,7 @@ module.exports = {
             .setDescription(`${this.description}`)
             .addField("Usage", `${this.usage}`, false)
             .addField("Available commands:", commandList, true)
-            .addField("Available features:", featureList, true)
+            .addField("Available features:", featureList, true);
         msg.channel.send(embed);
     },
     embedDescription: function (msg, args, commands, features, type) {
@@ -32,7 +32,7 @@ module.exports = {
             .setColor(0xffad00)
             .setTitle(`SpireBot Help - ${displayName}`)
             .addField("Description", helpTarget["description"], false)
-            .addField("Usage", helpTarget["usage"], false)
+            .addField("Usage", helpTarget["usage"], false);
 
         console.log(msg.author.username + ` asked for help with ${type} ` + args[0]);
         msg.channel.send(embed);
