@@ -2,10 +2,18 @@
   "name": "spirebot-discord",
   "version": "1.0.0",
   "description": "Discord bot NodeJS",
+  "homepage": "https://github.com/spirevipp/spirebot-discord#/readme.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spirevipp/spirebot-discord.git"
+  },
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bot.js"
+  },
+  "engines": {
+    "node": ">=14.15.4"
   },
   "author": "Spirevipp",
   "license": "ISC",
