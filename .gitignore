@@ -10,8 +10,8 @@ lerna-debug.log*
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # VS Code workspace file
-*.code-workspace
-.vscode
+# *.code-workspace
+# .vscode
 
 # Runtime data
 pids
