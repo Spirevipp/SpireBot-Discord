@@ -15,9 +15,9 @@ const client = new Discord.Client();
 let commands = {};
 console.log("Parsing commands in ./commands/");
 fs.readdirSync("./commands/").forEach((file) => {
-  // for each file, create linked list and require each file
-  file = file.substring(0, file.length - 3); // remove .js
-  commands[file] = require(`./commands/${file}`);
+    // for each file, create linked list and require each file
+    file = file.substring(0, file.length - 3); // remove .js
+    commands[file] = require(`./commands/${file}`);
 });
 console.log("Found these commands: ", Object.keys(commands));
 
@@ -25,28 +25,28 @@ console.log("Found these commands: ", Object.keys(commands));
 let features = {};
 console.log("Parsing features in ./features/");
 fs.readdirSync("./features/").forEach((file) => {
-  // for each file, create linked list and require each file
-  file = file.substring(0, file.length - 3); // remove .js
-  features[file] = require(`./features/${file}`);
+    // for each file, create linked list and require each file
+    file = file.substring(0, file.length - 3); // remove .js
+    features[file] = require(`./features/${file}`);
 });
 console.log("Found these features: ", Object.keys(features));
 
 // Connect to Discord API
 client.login(process.env.BOTTOKEN).catch(console.error);
 client.on("ready", () => {
-  // Callback func on login
-  console.log("Ready to beep!");
-  // Set status message
-  client.user
-    .setPresence({
-      activity: {
-        type: "WATCHING",
-        name: "🤖 BEEP BOOP 🤖",
-        details: "🤖 BEEP BOOP 🤖",
-      },
-      status: "online",
-    })
-    .catch(console.error);
+    // Callback func on login
+    console.log("Ready to beep!");
+    // Set status message
+    client.user
+        .setPresence({
+            activity: {
+                type: "WATCHING",
+                name: "🤖 BEEP BOOP 🤖",
+                details: "🤖 BEEP BOOP 🤖",
+            },
+            status: "online",
+        })
+        .catch(console.error);
 });
 
 // Do stuff when we get new msg
@@ -54,5 +54,5 @@ client.on("message", gotMessage);
 // commandHandler require additional args, must be passed through proxy function
 // msg is from client.on() function
 function gotMessage(msg) {
-  messageHandler(msg, commands, features);
+    messageHandler(msg, commands, features);
 }

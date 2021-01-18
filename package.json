@@ -1,29 +1,29 @@
 {
-  "name": "spirebot-discord",
-  "version": "1.0.0",
-  "description": "Discord bot NodeJS",
-  "homepage": "https://github.com/spirevipp/spirebot-discord#/readme.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/spirevipp/spirebot-discord.git"
-  },
-  "main": "bot.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
-  },
-  "engines": {
-    "node": ">=14.15.4"
-  },
-  "author": "Spirevipp",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "file-system": "^2.2.2",
-    "node-fetch": "^2.6.1"
-  },
-  "devDependencies": {
-    "prettier": "2.2.1"
-  }
+    "name": "spirebot-discord",
+    "version": "1.0.0",
+    "description": "Discord bot NodeJS",
+    "homepage": "https://github.com/spirevipp/spirebot-discord#/readme.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/spirevipp/spirebot-discord.git"
+    },
+    "main": "bot.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node bot.js"
+    },
+    "engines": {
+        "node": ">=14.15.4"
+    },
+    "author": "Spirevipp",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^12.5.1",
+        "dotenv": "^8.2.0",
+        "file-system": "^2.2.2",
+        "node-fetch": "^2.6.1"
+    },
+    "devDependencies": {
+        "prettier": "2.2.1"
+    }
 }
