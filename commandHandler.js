@@ -1,4 +1,4 @@
-helpHandler = require("./helpHandler");
+const helpHandler = require("./helpHandler");
 // Gets arg msg from callback function, commands is object with command.js files in ./commands/ folder
 module.exports = async function (msg, commands, features) {
     let tokens = msg.content.split(" ");
