@@ -35,7 +35,7 @@ console.log("Found these features: ", Object.keys(features));
 client.login(process.env.BOTTOKEN).catch(console.error);
 client.on("ready", () => {
     // Callback func on login
-    console.log("Ready to beep!");
+    console.log("Ready to beep! 🤖");
     // Set status message
     client.user
         .setPresence({
