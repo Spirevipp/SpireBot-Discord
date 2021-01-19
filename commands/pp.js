@@ -8,7 +8,7 @@ module.exports = {
             tts: true,
         });
     },
-    description: `pp`,
+    description: `Sends /tts P P to same channel`,
 
     usage: `${process.env.COMMANDSYMBOL}${name}`,
 };

@@ -13,7 +13,8 @@ module.exports = {
         const r = Math.floor(Math.random() * summonReplies.length);
         msg.channel.send(summonReplies[r]);
     },
-    description: `test`,
+    description: `Sends one of the following to same channel (no quotes):
+    "🤖 BEEP BOOP 🤖", "🤖🤖🤖🤖", "🤖 REPORTING FOR DUTY 🤖", "🤖 NO THANK YOU 🤖"`,
 
     usage: `${process.env.COMMANDSYMBOL}${name}`,
 };

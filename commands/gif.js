@@ -31,7 +31,7 @@ module.exports = {
         msg.channel.send("🤖 BEEP BOOP 🤖");
         msg.channel.send(json.results[index].url);
     },
-    description: `Searches Tenor for gifs with provided keywords`,
+    description: `Searches Tenor for gifs with provided keywords.\nExample: !gif cute kittens.\nPicks a random gif 1/20 and sends in the same channel`,
 
-    usage: `${process.env.COMMANDSYMBOL}${name}`,
+    usage: `${process.env.COMMANDSYMBOL}${name} *keyword(s)*`,
 };
