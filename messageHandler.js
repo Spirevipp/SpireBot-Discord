@@ -1,5 +1,5 @@
 const commandHandler = require("./commandHandler");
-const featureHandler = require("./featureHandler");
+const featureHandler = require("./messageFeatureHandler");
 
 function isPM(msg) {
     //console.log(msg.channel["type"]);

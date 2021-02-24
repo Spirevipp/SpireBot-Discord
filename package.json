@@ -18,10 +18,14 @@
     "author": "Spirevipp",
     "license": "ISC",
     "dependencies": {
+        "@discordjs/opus": "^0.4.0",
         "discord.js": "^12.5.1",
         "dotenv": "^8.2.0",
+        "ffmpeg": "0.0.4",
         "file-system": "^2.2.2",
-        "node-fetch": "^2.6.1"
+        "fluent-ffmpeg": "^2.1.2",
+        "node-fetch": "^2.6.1",
+        "ytdl-core": "^4.5.0"
     },
     "devDependencies": {
         "prettier": "2.2.1"
