@@ -4,6 +4,7 @@ module.exports = {
     name: name,
 
     command: function (msg, args) {
+        console.log("Resetting all loaded commands and functions...");
         bot.setup();
         msg.reply("I was resettered");
     },

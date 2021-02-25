@@ -11,8 +11,8 @@ const messageHandler = require("./messageHandler");
 const otherFeatureHandler = require("./otherFeatureHandler");
 
 // Vars
-let commands = {};
-let messageFeatures = {};
+let commandList = {};
+let messageFeatureList = {};
 let otherFeatureList = {};
 
 // Init Discord client class
@@ -58,10 +58,56 @@ client.on("voiceStateUpdate", (voiceState) => {
 
 // msg is from client.on() function
 function gotMessage(msg) {
-    messageHandler(msg, commands, messageFeatures);
+    messageHandler(msg, commandList, messageFeatureList);
 }
 
 const setup = () => {
+    //console.log(require.cache);
+    //console.log(commandList);
+    //console.log(messageFeatureList);
+    //console.log(otherFeatureList);
+    console.log(
+        "\nCurrent amount of commands: " + Object.keys(commandList).length
+    );
+    if (Object.keys(commandList).length > 0) {
+        for (let key of Object.keys(commandList)) {
+            let tmpPath = require.resolve(`./commands/${key}`);
+            //tmpPath = tmpPath.split("\\");
+            //tmpPath = tmpPath.join("\\\\");
+            console.log(tmpPath);
+            delete require.cache[tmpPath];
+        }
+    }
+    console.log(
+        "\nCurrent amount of messageFeatures: " +
+            Object.keys(messageFeatureList).length
+    );
+    if (Object.keys(messageFeatureList).length > 0) {
+        for (let key of Object.keys(messageFeatureList)) {
+            let tmpPath = require.resolve(`./messageFeatures/${key}`);
+            //tmpPath = tmpPath.split("\\");
+            //tmpPath = tmpPath.join("\\\\");
+            console.log(tmpPath);
+            delete require.cache[tmpPath];
+        }
+    }
+    console.log(
+        "\nCurrent amount of otherFeatures: " +
+            Object.keys(otherFeatureList).length
+    );
+    if (Object.keys(otherFeatureList).length > 0) {
+        for (let key of Object.keys(otherFeatureList)) {
+            let tmpPath = require.resolve(`./otherFeatures/${key}`);
+            //tmpPath = tmpPath.split("\\");
+            //tmpPath = tmpPath.join("\\\\");
+            console.log(tmpPath);
+            delete require.cache[tmpPath];
+        }
+    }
+
+    commandList = {}; // discards previous found files
+    messageFeatureList = {}; // discards previous found files
+    otherFeatureList = {}; // discards previous found files
     setupCommands();
     setupMessageFeatures();
     setupOtherFeatures();
@@ -70,40 +116,40 @@ const setup = () => {
 function setupCommands() {
     // Find all command subfiles and add to commands object
     // Filename is the command keyword
-    console.log("Parsing commands in ./commands/");
-    commands = {}; // discards previous found files
+    console.log("\nParsing commands in ./commands/");
     fs.readdirSync("./commands/").forEach((file) => {
         // for each file, create linked list and require each file
         file = file.substring(0, file.length - 3); // remove .js
-        commands[file] = require(`./commands/${file}`);
+        commandList[file] = require(`./commands/${file}`);
     });
-    console.log("Found these commands: ", Object.keys(commands));
+    console.log("Found these commands: ", Object.keys(commandList));
 }
 
 function setupMessageFeatures() {
     // Find all feature subfiles and add to features object
-    console.log("Parsing features in ./messageFeatures/");
-    messageFeatures = {}; // discards previous found files
+    console.log("\nParsing features in ./messageFeatures/");
     fs.readdirSync("./messageFeatures/").forEach((file) => {
         // for each file, create linked list and require each file
         file = file.substring(0, file.length - 3); // remove .js
-        messageFeatures[file] = require(`./messageFeatures/${file}`);
+        messageFeatureList[file] = require(`./messageFeatures/${file}`);
     });
-    console.log("Found these message features: ", Object.keys(messageFeatures));
+    console.log(
+        "Found these message features: ",
+        Object.keys(messageFeatureList)
+    );
 }
 
 function setupOtherFeatures() {
     // Find all non-message feature subfiles and add to otherFeatures object
-    console.log("Parsing features in ./otherFeatures/");
-    otherFeatures = {}; // discards previous found files
+    console.log("\nParsing features in ./otherFeatures/");
     fs.readdirSync("./otherFeatures/").forEach((file) => {
         // for each file, create linked list and require each file
         file = file.substring(0, file.length - 3); // remove .js
-        otherFeatures[file] = require(`./otherFeatures/${file}`);
+        otherFeatureList[file] = require(`./otherFeatures/${file}`);
     });
     console.log(
         "Found these non-message features: ",
-        Object.keys(otherFeatures)
+        Object.keys(otherFeatureList)
     );
 }
 
