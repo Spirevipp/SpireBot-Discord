@@ -22,6 +22,15 @@ function isFeature(ft, features) {
     return false;
 }
 
+/**
+ *
+ *
+ * @param {Discord.Message} msg
+ * @param {array} args
+ * @param {array} commands
+ * @param {array} features
+ * @return {*}
+ */
 module.exports = function (msg, args, commands, features) {
     //console.log(args);
     // If only help command
